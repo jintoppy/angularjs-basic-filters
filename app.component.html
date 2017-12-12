@@ -1,4 +1,14 @@
 <h2>
+    {{ 10 | ageCheck }}
+</h2>
+
+<input type="text" ng-model="$ctrl.inputVal">
+
+<h3>
+    {{ $ctrl.inputVal | ageCheck:15 }}
+</h3>
+
+<h2>
     {{ $ctrl.greeting | myName:'Hi' }}
 </h2>
 

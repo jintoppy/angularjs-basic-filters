@@ -7,6 +7,8 @@ angular.module('myapp')
             this.greeting = 'Hello Everyone';
 
             this.dob = '1513061958000';
+
+            this.yourAge = 20;
             
         }
     });
@@ -16,6 +18,22 @@ angular.module('myapp')
 
         return function(value, greeting){
             return greeting + " filtered value is " + value;
+        }; 
+
+    });
+
+
+angular.module('myapp')
+    .filter('ageCheck', function(){
+
+        return function(value, ageLimit){
+            var limit = ageLimit || 10;
+
+            if(parseInt(value) < limit) {
+                return "You are Junior";
+            }
+            return "You are Senior";
+            
         }; 
 
     });
